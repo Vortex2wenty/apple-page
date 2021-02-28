@@ -1,0 +1,83 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 2fr 1fr;
+    grid-template-areas:
+        "navbar  navbar   navbar"
+            "content content content"
+            "aside aside    aside"
+            "footer footer footer";
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: blue;
+    grid-area: navbar;
+    z-index: 1;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    list-style: none outside;
+}
+
+nav li {
+    width: 25%;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    text-align: center;
+    background: linear-gradient(#737373, #8d8d8d);
+    color: white;
+    border: 0.5px solid black;
+    border-left: none;
+}
+
+nav:nth-child(1) {
+    border-left: 0.5px solid black;
+}
+
+nav li:hover {
+    cursor: pointer;
+    background: linear-gradient(#626262, #7c7c7c);
+}
+
+article {
+    background: red;
+    grid-area: content;
+}
+
+.hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(https://web.archive.org/web/20140301004302im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg) 50% 100% no-repeat;
+    grid-area: content;
+    height: 70%;
+}
+
+aside {
+    background: grey;
+    grid-area: aside;
+}
+
+footer {
+    background: gold;
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.small {
+    position: relative;
+    top: 25%;
+}
