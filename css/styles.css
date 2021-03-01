@@ -1,7 +1,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr 2fr 1fr;
+    grid-template-rows: 1fr 4.25fr 2fr 1fr;
     grid-template-areas:
         "navbar  navbar   navbar"
             "content content content"
@@ -10,13 +10,19 @@
 }
 
 nav {
-    position: fixed;
+    position: relative;
+    top: 50px;
     width: 100%;
     background: blue;
     grid-area: navbar;
     z-index: 1;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     border-radius: 4px;
+    /* width: 70%; */
+    width: 955px;
+    margin: 25px auto 0 auto;
+    height: 30px;
+    box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
 }
 
 nav ul {
@@ -29,14 +35,23 @@ nav ul {
     list-style: none outside;
 }
 
+ul {
+    list-style: none outside;
+}
+
 nav li {
+    display: flex;
     width: 25%;
     font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
     text-align: center;
-    background: linear-gradient(#737373, #8d8d8d);
+    /* background: linear-gradient(#737373, #8d8d8d); */
+    background: linear-gradient(#737373, #636363 25%, #737373 50%, #8d8d8d 51%, #7d7d7d 76%, #8d8d8d);
     color: white;
     border: 0.5px solid black;
     border-left: none;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 nav:nth-child(1) {
@@ -45,12 +60,13 @@ nav:nth-child(1) {
 
 nav li:hover {
     cursor: pointer;
-    background: linear-gradient(#626262, #7c7c7c);
+    background: linear-gradient(#626262, #525252 25%, #626262 50%, #7c7c7c 51%, #6c6c6c 76%, #7c7c7c);
 }
 
 article {
-    background: red;
+    /* background: red; */
     grid-area: content;
+    height: 75%;
 }
 
 .hero {
@@ -61,23 +77,138 @@ article {
     left: 0;
     background: url(https://web.archive.org/web/20140301004302im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg) 50% 100% no-repeat;
     grid-area: content;
-    height: 70%;
+    height: 72%;
 }
 
 aside {
-    background: grey;
+    /* background: grey; */
     grid-area: aside;
+    margin: 0;
+}
+
+ul {
+    margin: 0 0 0 25px;
+    padding: 0;
 }
 
 footer {
-    background: gold;
+    position: relative;
+    top: 0;
+    /* background: gold; */
     grid-area: footer;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
     width: 100%;
+}
+
+h1, h2, h3, .no-a {
+    position: relative;
+    top: 27.5%;
+    /* margin: 0 auto; */
+    color: white;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 25px;
+    height: 65px;
+}
+
+.first {
+    border-left: none;
+}
+
+h3, .no-a {
+    font-size: 20px;
+}
+
+#hero-desc1::after {
+    content: "\a";
+    white-space: pre;
 }
 
 .small {
     position: relative;
     top: 25%;
+    margin: 0 auto;
+}
+
+aside ul li img {
+    position: relative;
+    left: 0;
+}
+
+form {
+    display: block;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    background-color: rgba(255,255,255,.1);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 2px 1px inset, rgba(255, 255, 255, 0.2) 0 1px 0;
+    background: url(/web/20140301004259im_/http://images.apple.com/global/nav/images/globalsearch_field.png) 0 0 no-repeat;
+}
+
+form input {
+    height: 19px;
+    padding: 2px 18px 1px 22px;
+    background-image: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+
+form input:focus {
+    outline: none;
+}
+
+p {
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    color: #6e6e6e;
+    font-size: .5555em;
+    line-height: 1.2;
+}
+
+a {
+    color: #08c;
+    text-decoration: none;
+    font: 8px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-size: .6634em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 980px;
+    padding: 1em 0 2.6em;
+    white-space: nowrap;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+footer li {
+    display: inline-block;
+    float: none;
+    margin-left: .6em;
+    padding-left: .6em;
+    border-left: 1px solid #ccc;
+}
+
+.clear-left {
+    clear: both;
+    float: left;
 }
